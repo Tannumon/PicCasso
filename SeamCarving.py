@@ -1,31 +1,8 @@
-# CS3100 - Fall 2023 - Programming Assignment 4
-#################################
-# Collaboration Policy: You may discuss the problem and the overall
-# strategy with up to 4 other students, but you MUST list those people
-# in your submission under collaborators.  You may NOT share code,
-# look at others' code, or help others debug their code.  Please read
-# the syllabus carefully around coding.  Do not seek published or online
-# solutions for any assignments. If you use any published or online resources
-# (which may not include solutions) when completing this assignment, be sure to
-# cite them. Do not submit a solution that you are unable to explain orally to a
-# member of the course staff.
-#################################
-# Your Computing ID: ebh2cd
-# Collaborators: 
-# Sources: Introduction to Algorithms, Cormen
-#################################
-
-
 class SeamCarving:
     def __init__(self):
         self.seam = []
         return
 
-    # This method is the one you should implement.  It will be called to perform
-    # the seam carving.  You may create any additional data structures as fields
-    # in this class or write any additional methods you need.
-    # 
-    # @return the seam's weight 
     def compute(self, image):
         rows, cols = len(image), len(image[0])
         weightmatrix = [([(-1)] * (cols)) for i in range(rows)]
@@ -60,13 +37,6 @@ class SeamCarving:
                 
         return min(weightmatrix[0])
 
-    # Get the seam, in order from top to bottom, where the top-left corner of the
-    # image is denoted (0,0).
-    # 
-    # Since the y-coordinate (row) is determined by the order, only return the x-coordinate
-    # 
-    # @return the ordered list of x-coordinates (column number) of each pixel in the seam
-    # as an array
 
     def getSeam(self):
         return self.seam
